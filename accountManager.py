@@ -49,7 +49,7 @@ def summary():
         else:
             totalExpenses += amount
             
-        balance = totalIncome - totalExpenses
+    balance = totalIncome - totalExpenses
                 
     print()
     print("Summary Report:")
@@ -87,7 +87,11 @@ def menu():
         
         if choice == '1':
             description = input("Enter description: ")
-            amount = float(input("Enter amount: "))
+            try:
+                amount = float(input("Enter amount: "))
+            except:
+                print("Please Enter Valid Amount")
+                continue
             category = input("Enter category: ")
             TransactionDate = input("Enter date (YYYY-MM-DD) or press Enter for today: ")
             TransactionDate = TransactionDate if TransactionDate else None
